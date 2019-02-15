@@ -17,7 +17,7 @@ def page_not_found(err):
 def index(data=""):
     JSON = {}
     JSON['date'] = str(datetime.now())
-    JSON['data'] = md5Encode('hola') if data != "" else "Sorry! We don't receive data to encode"
+    JSON['data'] = md5Encode(data) if data != "" else "Sorry! We don't receive data to encode"
     return JSON
 
 if __name__ == '__main__':
