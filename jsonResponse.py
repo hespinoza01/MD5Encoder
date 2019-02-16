@@ -8,6 +8,7 @@ def jsonResponse(callback):
         JSON = dumps(dict(callback(*args, **kwargs)), indent=4, sort_keys=True)
         response = make_response(JSON)
         response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
         response.headers['mimetype'] = 'application/json'
         response.status_code = 200
         return response
